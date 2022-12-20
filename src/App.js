@@ -1,10 +1,16 @@
+import React,{lazy} from 'react';
+import { Route,Routes } from 'react-router-dom';
 import './App.css';
+
+const Test = lazy(()=>import('@pages/test'))
+const Mine = lazy(()=>import('@pages/mine'))
 
 function App() {
   return (
-    <div className="App">
-      <div>App组件</div>
-    </div>
+    <Routes>
+      <Route path='/test' element={<Test/>}/>
+      <Route path='/mine' element={<Mine/>}/>
+    </Routes>
   );
 }
 
